@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "software_timer.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -91,23 +92,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter = 0;
+  setTimer1(1);
   while (1)
   {
+	  if(timer1_flag == 1){
+		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
+		  HAL_GPIO_TogglePin(YELLOW_LED_GPIO_Port, YELLOW_LED_Pin);
+	  }
     /* USER CODE END WHILE */
-	if (counter < 2){
-	  	HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, 1);
-	  	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1);
-	  	counter++;
-	  	  }
-	else{
-	  	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 0);
-	  	HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, 0);
-	  		  counter++;
-	if (counter >= 4) counter = 0;
-	}
 
-	HAL_Delay(1000);
+	HAL_Delay(10);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
