@@ -54,7 +54,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void setNumberOnClock(int num){
+void display12LED(int num){
 	switch(num){
 	case 1:
 		HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
