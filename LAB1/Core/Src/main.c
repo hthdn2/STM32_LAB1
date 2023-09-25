@@ -150,9 +150,15 @@ int main(void)
   while (1)
   {
 	  if (HAL_GPIO_ReadPin(BT_1_GPIO_Port, BT_1_Pin) == 1){
-		  display12LED(counter++);
+		  if (counter <= 11){
+			  display12LED(counter++);
+		  }
+		  else counter = 0;
 	  }
-	  else clearAllClock();
+	  else{
+		  clearAllClock();
+		  counter = 0;
+	  }
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
