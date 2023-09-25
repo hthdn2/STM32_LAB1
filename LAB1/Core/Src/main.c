@@ -134,11 +134,8 @@ int main(void)
   int counter = 0;
   while (1)
   {
-	  if (counter <= 11) setNumberOnClock(counter++);
-	  else{
-		  counter = 0;
-		  setNumberOnClock(counter++);
-	  }
+	  setNumberOnClock(counter++);
+	  //TODO
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
