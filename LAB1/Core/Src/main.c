@@ -131,7 +131,6 @@ int main(void)
 	  		  HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
 	  	  }
 
-
 	  	  timerRun();
 	  	  HAL_Delay(10);
     /* USER CODE END WHILE */
@@ -192,8 +191,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin|LED_GREEN_1_Pin|LED_YELLOW_1_Pin|LED_RED_2_Pin
-                          |LED_GREEN_2_Pin|LED_YELLOW_2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin|LED_GREEN_1_Pin|LED_GREEN_2_Pin|LED_YELLOW_2_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin|LED_RED_2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : LED_RED_1_Pin LED_GREEN_1_Pin LED_YELLOW_1_Pin LED_RED_2_Pin
                            LED_GREEN_2_Pin LED_YELLOW_2_Pin */
