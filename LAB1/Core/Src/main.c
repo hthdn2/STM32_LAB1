@@ -95,6 +95,21 @@ void display12LED(int num){
 	default:
 	}
 }
+
+void clearAllClock() {
+	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 0);
+	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 0);
+	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, 0);
+	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, 0);
+	HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, 0);
+	HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, 0);
+	HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, 0);
+	HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, 0);
+	HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, 0);
+	HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, 0);
+	HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, 0);
+	HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, 0);
+}
 /* USER CODE END 0 */
 
 /**
@@ -134,7 +149,10 @@ int main(void)
   int counter = 0;
   while (1)
   {
-	  setNumberOnClock(counter++);
+	  if (HAL_GPIO_ReadPin(BT_1_GPIO_Port, BT_1_Pin) == 1){
+		  display12LED(counter++);
+	  }
+	  else clearAllClock();
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -200,6 +218,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pins : BT_1_Pin BT_2_Pin */
+  GPIO_InitStruct.Pin = BT_1_Pin|BT_2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_1_Pin LED_2_Pin LED_3_Pin LED_4_Pin
                            LED_5_Pin LED_6_Pin LED_7_Pin LED_8_Pin
