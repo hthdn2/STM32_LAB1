@@ -89,10 +89,9 @@ void display12LED(int num){
 	case 11:
 		HAL_GPIO_TogglePin(LED_11_GPIO_Port, LED_11_Pin);
 		break;
-	case 0:
+	default:
 		HAL_GPIO_TogglePin(LED_12_GPIO_Port, LED_12_Pin);
 		break;
-	default:
 	}
 }
 /* USER CODE END 0 */
@@ -134,7 +133,7 @@ int main(void)
   int counter = 0;
   while (1)
   {
-	  setNumberOnClock(counter++);
+	  display12LED(counter++);
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
