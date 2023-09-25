@@ -135,7 +135,6 @@ int main(void)
   while (1)
   {
 	  setNumberOnClock(counter++);
-	  //TODO
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
