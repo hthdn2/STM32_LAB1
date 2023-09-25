@@ -99,18 +99,18 @@ int main(void)
   {
 	  if (timer1_flag == 1){
 	  		  setTimer1(1000);
-	  		  HAL_GPIO_TogglePin(RED_LED_1_GPIO_Port, RED_LED_1_Pin);
-	  		  HAL_GPIO_TogglePin(YELLOW_LED_1_GPIO_Port, YELLOW_LED_1_Pin);
+	  		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
+	  		  HAL_GPIO_TogglePin(YELLOW_LED_GPIO_Port, YELLOW_LED_Pin);
 	  	  }
 	  	  if (timer2_flag == 1){
 	  		  setTimer2(1000);
-	  		  HAL_GPIO_TogglePin(GREEN_LED_1_GPIO_Port, LED_GREEN_1_Pin);
-	  		  HAL_GPIO_TogglePin(RED_LED_1_GPIO_Port, RED_LED_1_Pin);
+	  		  HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, LED_GREEN_Pin);
+	  		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 	  	  }
 	  	  if (timer3_flag == 1){
 	  		  setTimer3(1000);
-	  		  HAL_GPIO_TogglePin(YELLOW_LED_1_GPIO_Port, YELLOW_LED_1_Pin);
-	  		  HAL_GPIO_TogglePin(GREEN_LED_1_GPIO_Port, GREEN_LED_1_Pin);
+	  		  HAL_GPIO_TogglePin(YELLOW_LED_GPIO_Port, YELLOW_LED_Pin);
+	  		  HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
 	  	  }
 	  timerRun();
 	  HAL_Delay(10);
