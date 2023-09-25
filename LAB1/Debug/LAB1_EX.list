@@ -559,130 +559,130 @@ int main(void)
  80004ae:	681b      	ldr	r3, [r3, #0]
  80004b0:	2b01      	cmp	r3, #1
  80004b2:	d10d      	bne.n	80004d0 <main+0x6c>
-	  	  		  setTimer1(1000);
+	  	  	setTimer1(1000);
  80004b4:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80004b8:	f001 f874 	bl	80015a4 <setTimer1>
-	  	  		  HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
  80004bc:	f44f 7180 	mov.w	r1, #256	; 0x100
  80004c0:	483d      	ldr	r0, [pc, #244]	; (80005b8 <main+0x154>)
  80004c2:	f000 fc77 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  		  HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
  80004c6:	f44f 6180 	mov.w	r1, #1024	; 0x400
  80004ca:	483b      	ldr	r0, [pc, #236]	; (80005b8 <main+0x154>)
  80004cc:	f000 fc72 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  	  }
-	  	  	  if (timer2_flag == 1){
+	  }
+	  if (timer2_flag == 1){
  80004d0:	4b3a      	ldr	r3, [pc, #232]	; (80005bc <main+0x158>)
  80004d2:	681b      	ldr	r3, [r3, #0]
  80004d4:	2b01      	cmp	r3, #1
  80004d6:	d10d      	bne.n	80004f4 <main+0x90>
-	  	  		  setTimer2(1000);
+	  	  	setTimer2(1000);
  80004d8:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80004dc:	f001 f876 	bl	80015cc <setTimer2>
-	  	  		  HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
  80004e0:	f44f 7100 	mov.w	r1, #512	; 0x200
  80004e4:	4834      	ldr	r0, [pc, #208]	; (80005b8 <main+0x154>)
  80004e6:	f000 fc65 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  		  HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
  80004ea:	f44f 7180 	mov.w	r1, #256	; 0x100
  80004ee:	4832      	ldr	r0, [pc, #200]	; (80005b8 <main+0x154>)
  80004f0:	f000 fc60 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  	  }
-	  	  	  if (timer3_flag == 1){
+	  }
+	  if (timer3_flag == 1){
  80004f4:	4b32      	ldr	r3, [pc, #200]	; (80005c0 <main+0x15c>)
  80004f6:	681b      	ldr	r3, [r3, #0]
  80004f8:	2b01      	cmp	r3, #1
  80004fa:	d10d      	bne.n	8000518 <main+0xb4>
-	  	  		  setTimer3(1000);
+	  	  	setTimer3(1000);
  80004fc:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000500:	f001 f878 	bl	80015f4 <setTimer3>
-	  	  		  HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
  8000504:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000508:	482b      	ldr	r0, [pc, #172]	; (80005b8 <main+0x154>)
  800050a:	f000 fc53 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  		  HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
  800050e:	f44f 7100 	mov.w	r1, #512	; 0x200
  8000512:	4829      	ldr	r0, [pc, #164]	; (80005b8 <main+0x154>)
  8000514:	f000 fc4e 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  	  }
+	  }
 	  	  	  //vertical
-	  	  	  if (timer4_flag == 1){
+	  if (timer4_flag == 1){
  8000518:	4b2a      	ldr	r3, [pc, #168]	; (80005c4 <main+0x160>)
  800051a:	681b      	ldr	r3, [r3, #0]
  800051c:	2b01      	cmp	r3, #1
  800051e:	d10d      	bne.n	800053c <main+0xd8>
-	  	  		  setTimer4(1000);
+	  	  	setTimer4(1000);
  8000520:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000524:	f001 f87a 	bl	800161c <setTimer4>
-	  	  		  HAL_GPIO_TogglePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin);
  8000528:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  800052c:	4822      	ldr	r0, [pc, #136]	; (80005b8 <main+0x154>)
  800052e:	f000 fc41 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  		  HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
  8000532:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000536:	4820      	ldr	r0, [pc, #128]	; (80005b8 <main+0x154>)
  8000538:	f000 fc3c 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  	  }
-	  	  	  if (timer5_flag == 1){
+	  }
+	  if (timer5_flag == 1){
  800053c:	4b22      	ldr	r3, [pc, #136]	; (80005c8 <main+0x164>)
  800053e:	681b      	ldr	r3, [r3, #0]
  8000540:	2b01      	cmp	r3, #1
  8000542:	d10d      	bne.n	8000560 <main+0xfc>
-	  	  		  setTimer5(1000);
+	  	  	setTimer5(1000);
  8000544:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000548:	f001 f87c 	bl	8001644 <setTimer5>
-	  	  		  HAL_GPIO_TogglePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_GREEN_2_GPIO_Port, LED_GREEN_2_Pin);
  800054c:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000550:	4819      	ldr	r0, [pc, #100]	; (80005b8 <main+0x154>)
  8000552:	f000 fc2f 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  		  HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
  8000556:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  800055a:	4817      	ldr	r0, [pc, #92]	; (80005b8 <main+0x154>)
  800055c:	f000 fc2a 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  	  }
-	  	  	  if (timer6_flag == 1){
+	  }
+	  if (timer6_flag == 1){
  8000560:	4b1a      	ldr	r3, [pc, #104]	; (80005cc <main+0x168>)
  8000562:	681b      	ldr	r3, [r3, #0]
  8000564:	2b01      	cmp	r3, #1
  8000566:	d10d      	bne.n	8000584 <main+0x120>
-	  	  		  setTimer6(1000);
+	  	  	setTimer6(1000);
  8000568:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800056c:	f001 f87e 	bl	800166c <setTimer6>
-	  	  		  HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
  8000570:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000574:	4810      	ldr	r0, [pc, #64]	; (80005b8 <main+0x154>)
  8000576:	f000 fc1d 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  		  HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
+	  	  	HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
  800057a:	f44f 6100 	mov.w	r1, #2048	; 0x800
  800057e:	480e      	ldr	r0, [pc, #56]	; (80005b8 <main+0x154>)
  8000580:	f000 fc18 	bl	8000db4 <HAL_GPIO_TogglePin>
-	  	  	  }
-	  	  	if(counter >=10) counter = 0;
+	  }
+	  if(counter >=10) counter = 0;
  8000584:	687b      	ldr	r3, [r7, #4]
  8000586:	2b09      	cmp	r3, #9
  8000588:	dd01      	ble.n	800058e <main+0x12a>
  800058a:	2300      	movs	r3, #0
  800058c:	607b      	str	r3, [r7, #4]
-	  	  		  if(timer7_flag == 1){
+	  if(timer7_flag == 1){
  800058e:	4b10      	ldr	r3, [pc, #64]	; (80005d0 <main+0x16c>)
  8000590:	681b      	ldr	r3, [r3, #0]
  8000592:	2b01      	cmp	r3, #1
  8000594:	d108      	bne.n	80005a8 <main+0x144>
-	  	  			  setTimer7(100);
+	  	  	setTimer7(100);
  8000596:	2064      	movs	r0, #100	; 0x64
  8000598:	f001 f87c 	bl	8001694 <setTimer7>
-	  	  			  display7SEG(counter++);
+	  	  	display7SEG(counter++);
  800059c:	687b      	ldr	r3, [r7, #4]
  800059e:	1c5a      	adds	r2, r3, #1
  80005a0:	607a      	str	r2, [r7, #4]
  80005a2:	4618      	mov	r0, r3
  80005a4:	f7ff fdd2 	bl	800014c <display7SEG>
-	  	  		  }
+	  }
 
 
-	  	  	  timerRun();
+	  timerRun();
  80005a8:	f001 f888 	bl	80016bc <timerRun>
-	  	  	  HAL_Delay(10);
+	  HAL_Delay(10);
  80005ac:	200a      	movs	r0, #10
  80005ae:	f000 f965 	bl	800087c <HAL_Delay>
 	  if (timer1_flag == 1){
