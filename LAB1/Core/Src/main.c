@@ -104,7 +104,7 @@ int main(void)
 	  	  }
 	  	  if (timer2_flag == 1){
 	  		  setTimer2(1000);
-	  		  HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, LED_GREEN_Pin);
+	  		  HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
 	  		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 	  	  }
 	  	  if (timer3_flag == 1){
