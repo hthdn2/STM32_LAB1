@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -89,11 +90,30 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  setTimer1(1);
+  setTimer2();
+  setTimer3();
   while (1)
   {
     /* USER CODE END WHILE */
-	  //TODO EX2
-    /* USER CODE BEGIN 3 */
+	if (timer1_flag == 1){
+	  		  setTimer1(1000);
+	  		  HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
+	  		  HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
+	}
+	if (timer2_flag == 1){
+	  		  setTimer2(1000);
+	  		  HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
+	  		  HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
+	}
+	if (timer3_flag == 1){
+	  		  setTimer3(1000);
+	  		  HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
+	  		  HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
+	}
+	timerRun();
+	HAL_Delay(10);
+    /* USER CODE BEGIN */
   }
   /* USER CODE END 3 */
 }
