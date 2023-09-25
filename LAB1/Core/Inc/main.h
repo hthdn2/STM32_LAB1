@@ -59,8 +59,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define RED_LED_Pin GPIO_PIN_5
 #define RED_LED_GPIO_Port GPIOA
-#define YELLOW_RED_Pin GPIO_PIN_6
-#define YELLOW_RED_GPIO_Port GPIOA
+#define YELLOW_LED_Pin GPIO_PIN_6
+#define YELLOW_LED_GPIO_Port GPIOA
 #define GREEN_LED_Pin GPIO_PIN_7
 #define GREEN_LED_GPIO_Port GPIOA
 
