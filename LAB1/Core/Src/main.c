@@ -89,7 +89,7 @@ void setNumberOnClock(int num){
 	case 11:
 		HAL_GPIO_TogglePin(LED_11_GPIO_Port, LED_11_Pin);
 		break;
-	case 12:
+	case 0:
 		HAL_GPIO_TogglePin(LED_12_GPIO_Port, LED_12_Pin);
 		break;
 	default:
