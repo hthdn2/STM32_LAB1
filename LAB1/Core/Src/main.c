@@ -57,40 +57,40 @@ static void MX_GPIO_Init(void);
 void setNumberOnClock(int num){
 	switch(num){
 	case 1:
-		HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
+		HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, 1);
 		break;
 	case 2:
-		HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+		HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, 1);
 		break;
 	case 3:
-		HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
+		HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, 1);
 		break;
 	case 4:
-		HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
+		HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, 1);
 		break;
 	case 5:
-		HAL_GPIO_TogglePin(LED_5_GPIO_Port, LED_5_Pin);
+		HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, 1);
 		break;
 	case 6:
-		HAL_GPIO_TogglePin(LED_6_GPIO_Port, LED_6_Pin);
+		HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, 1);
 		break;
 	case 7:
-		HAL_GPIO_TogglePin(LED_7_GPIO_Port, LED_7_Pin);
+		HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, 1);
 		break;
 	case 8:
-		HAL_GPIO_TogglePin(LED_8_GPIO_Port, LED_8_Pin);
+		HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, 1);
 		break;
 	case 9:
-		HAL_GPIO_TogglePin(LED_9_GPIO_Port, LED_9_Pin);
+		HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, 1);
 		break;
 	case 10:
-		HAL_GPIO_TogglePin(LED_10_GPIO_Port, LED_10_Pin);
+		HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, 1);
 		break;
 	case 11:
-		HAL_GPIO_TogglePin(LED_11_GPIO_Port, LED_11_Pin);
+		HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, 1);
 		break;
 	case 0:
-		HAL_GPIO_TogglePin(LED_12_GPIO_Port, LED_12_Pin);
+		HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, 1);
 		break;
 	default:
 	}
@@ -167,33 +167,40 @@ int main(void)
   int sec_on_clock = 0;
   while (1)
   {
-	  if (sec = 43199) sec = 0;
+	  // -------------------------------------------Compute Hour, Minute --------------------------------
+	  if (sec >= 43200) sec = 0;
 	  else{
 		  sec++;
-		  if (sec % 60 == 0){
+		  if (sec > 0 && sec % 60 == 0){
 			  min++;
 			  if (min % 5 == 0) min_on_clock++;
-					  if (min_on_clock == 12) min_on_clock =0;
+					  if (min_on_clock >= 12) min_on_clock =0;
 		  }
-		  if (min % 60 == 0){
+		  if (sec > 0 && sec % 3600 == 0){
 			  hour++;
-			  if (hour == 12) hour == 0;
 		  }
-		  if (sec % 5 == 0){
+		  if (sec > 0 && sec % 5 == 0){
 			  sec_on_clock++;
-			  if (sec_on_clock == 12)
+			  if (sec_on_clock >= 12)
 			  sec_on_clock = 0;
 		  }
 	  }
-	  if (hour == min_on_clock && hour == sec_on_clock) setNumberOnClock(hour);
+	  //-------------------------------------------Show on Analog Clock ----------------------------------
+	  if (hour == min_on_clock && hour == sec_on_clock){
+		  clearAllClock();
+		  setNumberOnClock(hour);
+	  }
 	  else if (min_on_clock == sec_on_clock){
+		  clearAllClock();
 		  setNumberOnClock(hour);
 	  }
 	  else if (hour == min_on_clock){
+		  clearAllClock();
 		  setNumberOnClock(hour);
 		  setNumberOnClock(sec_on_clock);
 	  }
 	  else {
+		  clearAllClock();
 		  setNumberOnClock(hour);
 		  setNumberOnClock(min_on_clock);
 		  setNumberOnClock(sec_on_clock);
