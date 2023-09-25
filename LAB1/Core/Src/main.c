@@ -96,6 +96,7 @@ int main(void)
   while (1)
   {
 	  if(timer1_flag == 1){
+		  setTimer1(200);
 		  HAL_GPIO_TogglePin(RED_LED_GPIO_Port, RED_LED_Pin);
 		  HAL_GPIO_TogglePin(YELLOW_LED_GPIO_Port, YELLOW_LED_Pin);
 	  }
