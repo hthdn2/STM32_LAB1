@@ -89,7 +89,7 @@ void setNumberOnClock(int num){
 	case 11:
 		HAL_GPIO_TogglePin(LED_11_GPIO_Port, LED_11_Pin);
 		break;
-	case 0:
+	case 12:
 		HAL_GPIO_TogglePin(LED_12_GPIO_Port, LED_12_Pin);
 		break;
 	default:
@@ -160,24 +160,45 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter = 0;
+  int hour = 0;
+  int min = 0;
+  int min_on_clock = 0;
+  int sec = 0;
+  int sec_on_clock = 0;
   while (1)
   {
-	  if (HAL_GPIO_ReadPin(BT_1_GPIO_Port, BT_1_Pin) == 0 && HAL_GPIO_ReadPin(BT_2_GPIO_Port, BT_2_Pin) == 0){
-		  if (counter <= 11) setNumberOnClock(counter++);
-		  else counter = 0;
+	  if (sec = 43199) sec = 0;
+	  else{
+		  sec++;
+		  if (sec % 60 == 0){
+			  min++;
+			  if (min % 5 == 0) min_on_clock++;
+					  if (min_on_clock == 12) min_on_clock =0;
+		  }
+		  if (min % 60 == 0){
+			  hour++;
+			  if (hour == 12) hour == 0;
+		  }
+		  if (sec % 5 == 0){
+			  sec_on_clock++;
+			  if (sec_on_clock == 12)
+			  sec_on_clock = 0;
+		  }
+	  }
+	  if (hour == min_on_clock && hour == sec_on_clock) setNumberOnClock(hour);
+	  else if (min_on_clock == sec_on_clock){
+		  setNumberOnClock(hour);
+	  }
+	  else if (hour == min_on_clock){
+		  setNumberOnClock(hour);
+		  setNumberOnClock(sec_on_clock);
+	  }
+	  else {
+		  setNumberOnClock(hour);
+		  setNumberOnClock(min_on_clock);
+		  setNumberOnClock(sec_on_clock);
 	  }
 
-	  if (HAL_GPIO_ReadPin(BT_2_GPIO_Port, BT_2_Pin) == 0 && HAL_GPIO_ReadPin(BT_3_GPIO_Port, BT_3_Pin) == 0){
-		  clearAllClock();
-		  setNumberOnClock(counter++);
-	  }
-
-	  if (HAL_GPIO_ReadPin(BT_1_GPIO_Port, BT_1_Pin) == 0 && HAL_GPIO_ReadPin(BT_3_GPIO_Port, BT_3_Pin) == 0){
-		  onAllClock();
-		  setNumberOnClock(counter++);
-	  }
-	  //Ex10
 
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
