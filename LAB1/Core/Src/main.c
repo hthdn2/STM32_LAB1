@@ -177,7 +177,7 @@ int main(void)
 		  onAllClock();
 		  setNumberOnClock(counter++);
 	  }
-
+	  //Ex9
 
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
